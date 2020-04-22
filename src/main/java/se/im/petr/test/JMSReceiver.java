@@ -8,7 +8,7 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 
 /**
- * Send message to AOM using CSF JMS
+ * Receive message from AOM using CSF JMS
  * 
  * @author petr
  */
