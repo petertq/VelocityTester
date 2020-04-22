@@ -1,0 +1,10 @@
+<orders>
+	<orderLine>
+		<name>produkt 1</name>
+		<price>100</price>
+	</orderLine>
+	<orderLine>
+		<name>produkt 2</name>
+		<price>200</price>
+	</orderLine>
+</orders>

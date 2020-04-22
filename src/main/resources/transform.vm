@@ -1,0 +1,36 @@
+#set ( $head = $root.getChild("HEAD", $ns) )
+#set ( $orders = $head.getChildren("ORDER", $ns) )
+      <new:OrderPreview xmlns:new="http://new.webservice.namespace">
+#foreach ( $order in $orders )
+         <new:aOrderPreviewHeadDoc>
+            <new:CustomerOrderReference>?</new:CustomerOrderReference>
+            <new:CompanyId>$!order.getChild("COMPANYID", $ns).getText()</new:CompanyId>
+            <new:CustomerId>$!order.getChild("CUSTNO", $ns).getText()</new:CustomerId>
+            <new:NextNodeId>$!order.getChild("CZNEXTNODEID", $ns).getText()</new:NextNodeId>
+            <new:WarehouseId>$!order.getChild("STOCKNOPU", $ns).getText()</new:WarehouseId>
+            <new:aOrderPreviewLineDocs>
+#set ( $lines = $order.getChildren("LINE", $ns) )
+#foreach ( $line in $!lines )
+               <new:OrderPreviewLineDoc>
+                  <new:OperationCode>$line.getChild("CZOPCODE", $ns).getText()</new:OperationCode>
+                  <new:ProductId>$line.getChild("PARTNO", $ns).getText()</new:ProductId>
+                  <new:CompanyId>$line.getChild("COMPANYID", $ns).getText()</new:CompanyId>
+                  <new:QualityLot>?</new:QualityLot>
+                  <new:Quantity>$line.getChild("QTYCO", $ns).getText()</new:Quantity>
+                  <new:UnitOfMeasure>$line.getChild("UNIT", $ns).getText()</new:UnitOfMeasure>
+                  <new:EarlyRelease>?</new:EarlyRelease>
+                  <new:Promotion>?</new:Promotion>
+                  <new:CustomerOrderReference>?</new:CustomerOrderReference>
+                  <new:CustomerOrderLineReference>?</new:CustomerOrderLineReference>
+                  <new:DepartureId>?</new:DepartureId>
+                  <new:RegionalDepartureId>?</new:RegionalDepartureId>
+                  <new:RouteId>?</new:RouteId>
+                  <new:RegionalRoute>?</new:RegionalRoute>
+                  <new:ReleaseTime>?</new:ReleaseTime>
+                  <new:DepartureTime>?</new:DepartureTime>
+               </new:OrderPreviewLineDoc>
+#end
+            </new:aOrderPreviewLineDocs>
+         </new:aOrderPreviewHeadDoc>
+      </new:OrderPreview>
+#end

@@ -1,0 +1,5 @@
+#foreach ( $child in $element )
+$child
+#end
+xx
+x
