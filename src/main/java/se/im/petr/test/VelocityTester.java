@@ -51,7 +51,7 @@ public class VelocityTester {
 	}
 
 	public void test3() throws Exception {
-		JMSReceiver receiver = new JMSReceiver("midas", 1234, "edi");
+		JMSReceiver receiver = new JMSReceiver("midas", 5311, "edi");
 		String receivedMessage = receiver.receiveMessage(10);
 		VelocityContext context = new VelocityContext();
 		SAXBuilder builder = new SAXBuilder();
@@ -59,12 +59,12 @@ public class VelocityTester {
 		Element root = document.getRootElement();
 		Namespace ns = Namespace.getNamespace("http://www.aftobbladet.se");
 		context.put("root", root);
-		context.put("ns", ns);
+		context.put("ns", null); // no namespace!
 		String message = createMessage("transform.vm", context);
 		System.out.println("transformed message:\n" + message);
 	}
 
 	public static void main(String[] args) throws Exception {
-		new VelocityTester().test2();
+		new VelocityTester().test3();
 	}
 }

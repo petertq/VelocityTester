@@ -54,7 +54,7 @@ public class JMSReceiver {
 			/*
 			 * Create a Message Producer using our Destination and send the message
 			 */
-			MessageConsumer messageConsumer = session.createConsumer(destination, "");
+			MessageConsumer messageConsumer = session.createConsumer(destination, "MESSAGETYPE = 'CZ0104'");
 			Message message = messageConsumer.receive(secs*1000L);
 			if (message == null) {
 				return null;
@@ -99,12 +99,14 @@ public class JMSReceiver {
 			 * Create a JMS Connection Factory and Destination and configure
 			 * them using reflection
 			 */
-			qcf = ConnectionFactory.class.getConstructor().newInstance();
+			qcf = (ConnectionFactory) Class.forName(QCF_CLASS_NAME).newInstance();
+
 			qcf.getClass().getField("host").set(qcf, host);			
 			qcf.getClass().getField("port").set(qcf, port);
 			qcf.getClass().getField("userid").set(qcf, userId);
-			destination.getClass().getConstructor().newInstance();
-			destination = Destination.class.getConstructor().newInstance();
+			destination = (Destination) Class.forName(QUEUE_CLASS_NAME).newInstance();
+
+//			destination = Destination.class.getConstructor().newInstance();
 			destination.getClass().getField("qname").set(destination, "myqueue");
 		}
 		catch (Exception e) {
