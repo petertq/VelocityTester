@@ -10,6 +10,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>				
 					<release>10</release>
 				</configuration>
 			</plugin>
@@ -51,6 +53,13 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>2.11.1</version>
-		</dependency>					
+		</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.camel/camel-core -->
+<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-core</artifactId>
+    <version>2.23.0</version>
+</dependency>
+		
 	</dependencies>
 </project>

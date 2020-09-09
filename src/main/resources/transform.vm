@@ -1,36 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
 #set ( $head = $root.getChild("HEAD", $ns) )
 #set ( $orders = $head.getChildren("ORDER", $ns) )
-      <new:OrderPreview xmlns:new="http://new.webservice.namespace">
+<OrderPreview xmlns="http://new.webservice.namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 #foreach ( $order in $orders )
-         <new:aOrderPreviewHeadDoc>
-            <new:CustomerOrderReference>?</new:CustomerOrderReference>
-            <new:CompanyId>$!order.getChild("COMPANYID", $ns).getText()</new:CompanyId>
-            <new:CustomerId>$!order.getChild("CUSTNO", $ns).getText()</new:CustomerId>
-            <new:NextNodeId>$!order.getChild("CZNEXTNODEID", $ns).getText()</new:NextNodeId>
-            <new:WarehouseId>$!order.getChild("STOCKNOPU", $ns).getText()</new:WarehouseId>
-            <new:aOrderPreviewLineDocs>
+    <aOrderPreviewHeadDoc>
+#if ( $!order.getChild("CONO", $ns) )
+        <CustomerOrderReference>$!order.getChild("CONO", $ns).getText()</CustomerOrderReference>
+#else
+        <CustomerOrderReference xsi:nil="true" />
+#end
+        <CompanyId>$!order.getChild("COMPANYID", $ns).getText()</CompanyId>
+#if ( $!order.getChild("CUSTNO", $ns) )
+        <CustomerId>$!order.getChild("CUSTNO", $ns).getText()</CustomerId>
+#else
+        <CustomerId xsi:nil="true" />
+#end
+#if ( $!order.getChild("CZNEXTNODEID", $ns) )
+        <NextNodeId>$!order.getChild("CZNEXTNODEID", $ns).getText()</NextNodeId>
+#else
+        <NextNodeId xsi:nil="true" />
+#end
+#if ( $!order.getChild("STOCKNOPU", $ns) )
+        <WarehouseId>$!order.getChild("STOCKNOPU", $ns).getText()</WarehouseId>
+#else
+        <WarehouseId xsi:nil="true" />
+#end
+        <aOrderPreviewLineDocs>
 #set ( $lines = $order.getChildren("LINE", $ns) )
 #foreach ( $line in $!lines )
-               <new:OrderPreviewLineDoc>
-                  <new:OperationCode>$line.getChild("CZOPCODE", $ns).getText()</new:OperationCode>
-                  <new:ProductId>$line.getChild("PARTNO", $ns).getText()</new:ProductId>
-                  <new:CompanyId>$line.getChild("COMPANYID", $ns).getText()</new:CompanyId>
-                  <new:QualityLot>?</new:QualityLot>
-                  <new:Quantity>$line.getChild("QTYCO", $ns).getText()</new:Quantity>
-                  <new:UnitOfMeasure>$line.getChild("UNIT", $ns).getText()</new:UnitOfMeasure>
-                  <new:EarlyRelease>?</new:EarlyRelease>
-                  <new:Promotion>?</new:Promotion>
-                  <new:CustomerOrderReference>?</new:CustomerOrderReference>
-                  <new:CustomerOrderLineReference>?</new:CustomerOrderLineReference>
-                  <new:DepartureId>?</new:DepartureId>
-                  <new:RegionalDepartureId>?</new:RegionalDepartureId>
-                  <new:RouteId>?</new:RouteId>
-                  <new:RegionalRoute>?</new:RegionalRoute>
-                  <new:ReleaseTime>?</new:ReleaseTime>
-                  <new:DepartureTime>?</new:DepartureTime>
-               </new:OrderPreviewLineDoc>
+            <OrderPreviewLineDoc>
+#if ( $line.getChild("CZOPCODE", $ns) )
+                <OperationCode>$!line.getChild("CZOPCODE", $ns).getText()</OperationCode>
+#else
+                <OperationCode xsi:nil="true" />
 #end
-            </new:aOrderPreviewLineDocs>
-         </new:aOrderPreviewHeadDoc>
-      </new:OrderPreview>
+#if ( $!line.getChild("PARTNO", $ns) )
+                <ProductId>$!line.getChild("PARTNO", $ns).getText()</ProductId>
+#else
+                <ProductId xsi:nil="true" />
 #end
+                <CompanyId>$!line.getChild("COMPANYID", $ns).getText()</CompanyId>
+#if ( $!line.getChild("HOLDCODE", $ns) )
+                <HoldCode>$!line.getChild("HOLDCODE", $ns).getText()</HoldCode>
+#else
+                <HoldCode xsi:nil="true" />
+#end
+#if ( $!line.getChild("LOTNOQUALITY", $ns) )
+                <QualityLot>$!line.getChild("LOTNOQUALITY", $ns).getText()</QualityLot>
+#else
+                <QualityLot xsi:nil="true" />
+#end
+#if ($!line.getChild("QTYCO", $ns) )
+                <Quantity>$!line.getChild("QTYCO", $ns).getText()</Quantity>
+#else
+                <Quantity xsi:nil="true" />
+#end
+#if ( $!line.getChild("UNIT", $ns) )
+                <UnitOfMeasure>$!line.getChild("UNIT", $ns).getText()</UnitOfMeasure>
+#else
+                <UnitOfMeasure xsi:nil="true" />
+#end
+#if ( $!line.getChild("ALLOWEARLYRELWHSE", $ns) )
+                <EarlyRelease>$!line.getChild("ALLOWEARLYRELWHSE", $ns).getText()</EarlyRelease>
+#else
+                <EarlyRelease xsi:nil="true" />
+#end
+#if ( $!line.getChild("CZPROMOTION", $ns) )
+                <Promotion>$!line.getChild("CZPROMOTION", $ns).getText()</Promotion>
+#else
+                <Promotion xsi:nil="true" />
+#end
+#if ( $!line.getChild("CONO", $ns) )
+                <CustomerOrderReference>$!line.getChild("CONO", $ns).getText()</CustomerOrderReference>
+#else
+                <CustomerOrderReference xsi:nil="true" />
+#end
+#if ( $!line.getChild("ROWPOS", $ns) )
+                <CustomerOrderLineReference>$!line.getChild("ROWPOS", $ns).getText()</CustomerOrderLineReference>
+#else
+                <CustomerOrderLineReference xsi:nil="true" />
+#end
+#if ( $!line.getChild("TOURNO", $ns) )
+                <DepartureId>$!line.getChild("TOURNO", $ns).getText()</DepartureId>
+#else
+                <DepartureId xsi:nil="true" />
+#end
+#if ( $!line.getChild("TOURNOSU", $ns) )
+                <RegionalDepartureId>$!line.getChild("TOURNOSU", $ns).getText()</RegionalDepartureId>
+#else
+                <RegionalDepartureId xsi:nil="true" />
+#end
+#if ( $!line.getChild("RMROUTENO", $ns) )
+                <RouteId>$!line.getChild("RMROUTENO", $ns).getText()</RouteId>
+#else
+                <RouteId xsi:nil="true" />
+#end
+#if ( $!line.getChild("CZRMROUTENOSU", $ns) )
+                <RegionalRouteID>$!line.getChild("CZRMROUTENOSU", $ns).getText()</RegionalRouteID>
+#else
+                <RegionalRouteID xsi:nil="true" />
+#end
+#if ( $!line.getChild("STOPTIMEDATE", $ns) )
+                <ReleaseTime>$!line.getChild("STOPTIMEDATE", $ns).getText()</ReleaseTime>
+#else
+                <ReleaseTime xsi:nil="true" />
+#end
+#if ( $!line.getChild("SHIPTIMEDATE", $ns) )
+                <DepartureTime>$!line.getChild("SHIPTIMEDATE", $ns).getText()</DepartureTime>
+#else
+                <DepartureTime xsi:nil="true" />
+#end
+            </OrderPreviewLineDoc>
+#end
+        </aOrderPreviewLineDocs>
+    </aOrderPreviewHeadDoc>
+    <Application>$!head.getChild("APPLICATION", $ns).getText()</Application>
+#end
+</OrderPreview>
