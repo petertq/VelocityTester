@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Arcus1Ifs>
+	<MessageHead>
+		<EventId>HE930O</EventId>
+		<MessageType>ARCUS1</MessageType>
+		<SenderId>AOM</SenderId>
+		<RecipientId>GFI</RecipientId>
+		<MessageRef>74821</MessageRef>
+		<CreationDate>2020-12-10T08:49:14+01:00</CreationDate>
+		<InterfaceId>Arcus1Ifs</InterfaceId>
+	</MessageHead>
+	<LINE>
+		<x1>AOM</x1>
+		<ROWVERSION>2020-12-10T08:49:14+01:00</ROWVERSION>
+		<TRANSTYPEID>HE931</TRANSTYPEID>
+		<C17>10</C17>
+		<C01>303030</C01>
+		<C02>gfi test</C02>
+		<C08>storgatan 10</C08>
+		<CITY>Linköping</CITY>
+		<C13>582 46</C13>
+		<C05>SE</C05>
+		<CUREF>a</CUREF>
+		<C06>SEK</C06>
+		<MODEPAY>1</MODEPAY>
+		<N00>10000000</N00>
+		<ORDMANREL>N</ORDMANREL>
+		<CHARGONFICHARGFLG>N</CHARGONFICHARGFLG>
+		<CRERTCLASS>1</CRERTCLASS>
+		<TERMSPAY>1</TERMSPAY>
+		<CUSTRELNAME>EXTERNCUST</CUSTRELNAME>
+		<INTINVYN>N</INTINVYN>
+		<D00>2020-12-07</D00>
+	</LINE>
+</Arcus1Ifs>

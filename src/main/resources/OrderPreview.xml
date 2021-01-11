@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderPreview xmlns="http://new.webservice.namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <aOrderPreviewHeadDoc>
+        <CustomerOrderReference>1455216</CustomerOrderReference>
+        <CompanyId>NG</CompanyId>
+        <CustomerId>826693</CustomerId>
+        <NextNodeId>826693</NextNodeId>
+        <WarehouseId>331</WarehouseId>
+        <aOrderPreviewLineDocs>
+            <OrderPreviewLineDoc>
+                <OperationCode>New</OperationCode>
+                <ProductId>1145069</ProductId>
+                <CompanyId>NG</CompanyId>
+                <HoldCode>00</HoldCode>
+                <QualityLot xsi:nil="true" />
+                <Quantity>1.000</Quantity>
+                <UnitOfMeasure>DP</UnitOfMeasure>
+                <EarlyRelease xsi:nil="true" />
+                <Promotion>0</Promotion>
+                <CustomerOrderReference>1455216</CustomerOrderReference>
+                <CustomerOrderLineReference>1</CustomerOrderLineReference>
+                <DepartureId>902131</DepartureId>
+                <RegionalDepartureId xsi:nil="true" />
+                <RouteId>3166</RouteId>
+                <RegionalRouteId xsi:nil="true" />
+                <ReleaseTime>2020-06-30T10:00:00+02:00</ReleaseTime>
+                <DepartureTime>2020-07-01T05:00:00+02:00</DepartureTime>
+            </OrderPreviewLineDoc>
+            <OrderPreviewLineDoc>
+                <OperationCode>UpdateLine</OperationCode>
+                <ProductId>1145069</ProductId>
+                <CompanyId>NG</CompanyId>
+                <HoldCode>00</HoldCode>
+                <QualityLot xsi:nil="true" />
+                <Quantity>2.000</Quantity>
+                <UnitOfMeasure>DP</UnitOfMeasure>
+                <EarlyRelease xsi:nil="true" />
+                <Promotion>0</Promotion>
+                <CustomerOrderReference>1455216</CustomerOrderReference>
+                <CustomerOrderLineReference>1</CustomerOrderLineReference>
+                <DepartureId>902131</DepartureId>
+                <RegionalDepartureId xsi:nil="true" />
+                <RouteId>3166</RouteId>
+                <RegionalRouteId xsi:nil="true" />
+                <ReleaseTime>2020-06-30T10:00:00+02:00</ReleaseTime>
+                <DepartureTime>2020-07-01T05:00:00+02:00</DepartureTime>
+            </OrderPreviewLineDoc>
+            <OrderPreviewLineDoc>
+                <OperationCode>New</OperationCode>
+                <ProductId>1145069</ProductId>
+                <CompanyId>NG</CompanyId>
+                <HoldCode>00</HoldCode>
+                <QualityLot xsi:nil="true" />
+                <Quantity>1.000</Quantity>
+                <UnitOfMeasure>DP</UnitOfMeasure>
+                <EarlyRelease xsi:nil="true" />
+                <Promotion>0</Promotion>
+                <CustomerOrderReference>1455216</CustomerOrderReference>
+                <CustomerOrderLineReference>2</CustomerOrderLineReference>
+                <DepartureId>902131</DepartureId>
+                <RegionalDepartureId xsi:nil="true" />
+                <RouteId>3166</RouteId>
+                <RegionalRouteId xsi:nil="true" />
+                <ReleaseTime>2020-06-30T10:00:00+02:00</ReleaseTime>
+                <DepartureTime>2020-07-01T05:00:00+02:00</DepartureTime>
+            </OrderPreviewLineDoc>
+            <OrderPreviewLineDoc>
+                <OperationCode>New</OperationCode>
+                <ProductId>1145051</ProductId>
+                <CompanyId>NG</CompanyId>
+                <HoldCode>00</HoldCode>
+                <QualityLot xsi:nil="true" />
+                <Quantity>1.000</Quantity>
+                <UnitOfMeasure>DP</UnitOfMeasure>
+                <EarlyRelease xsi:nil="true" />
+                <Promotion>0</Promotion>
+                <CustomerOrderReference>1455216</CustomerOrderReference>
+                <CustomerOrderLineReference>3</CustomerOrderLineReference>
+                <DepartureId>902131</DepartureId>
+                <RegionalDepartureId xsi:nil="true" />
+                <RouteId>3166</RouteId>
+                <RegionalRouteId xsi:nil="true" />
+                <ReleaseTime>2020-06-30T10:00:00+02:00</ReleaseTime>
+                <DepartureTime>2020-07-01T05:00:00+02:00</DepartureTime>
+            </OrderPreviewLineDoc>
+        </aOrderPreviewLineDocs>
+    </aOrderPreviewHeadDoc>
+    <Application>Estimate</Application>
+</OrderPreview>
+

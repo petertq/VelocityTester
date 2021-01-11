@@ -98,7 +98,7 @@
 #if ( $!line.getChild("CZRMROUTENOSU", $ns) )
                 <RegionalRouteId>$!line.getChild("CZRMROUTENOSU", $ns).getText()</RegionalRouteId>
 #else
-                <RegionalRouteID xsi:nil="true" />
+                <RegionalRouteId xsi:nil="true" />
 #end
 #if ( $!line.getChild("STOPTIMEDATE", $ns) )
                 <ReleaseTime>$!line.getChild("STOPTIMEDATE", $ns).getText()</ReleaseTime>

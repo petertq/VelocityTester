@@ -75,10 +75,10 @@ public class VelocityTester {
 			List<Content> contentList = document.getContent();
 //			listContent(contentList, 0);
 			Element root = document.getRootElement();
-			Namespace ns = Namespace.getNamespace("http://www.aftobbladet.se");
+			Namespace ns = Namespace.getNamespace("http://www.aftonbladet.se");
 			context.put("root", root);
 			context.put("ns", null);
-			String message = createMessage("transform.vm", context);
+			String message = createMessage("OrderPreview.vm", context);
 			System.out.println("transformed message:\n" + message);
 		}
 	}

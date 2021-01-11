@@ -1,2 +1,3 @@
 target
 bin
+src/main/java/se/im/petr/test/VelocityTransformer.java
